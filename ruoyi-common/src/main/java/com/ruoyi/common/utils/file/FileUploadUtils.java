@@ -1,15 +1,18 @@
 package com.ruoyi.common.utils.file;
 
 import com.ruoyi.common.config.RuoYiConfig;
+import com.ruoyi.common.constant.Constants;
 import com.ruoyi.common.exception.file.FileNameLengthLimitExceededException;
 import com.ruoyi.common.exception.file.FileSizeLimitExceededException;
 import com.ruoyi.common.exception.file.InvalidExtensionException;
 import com.ruoyi.common.utils.DateUtils;
 import com.ruoyi.common.utils.StringUtils;
+import com.ruoyi.common.utils.uuid.IdUtils;
 import org.apache.commons.fileupload.FileUploadBase;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -78,7 +81,13 @@ public class FileUploadUtils {
 
         assertAllowed(file, allowedExtension);
 
-        String fileName =
+        String fileName = extractFilename(file);
+
+        File desc = getAbsoluteFile(baseDir, fileName);
+        file.transferTo(desc);
+
+        String pathFileName = getPathFileName(baseDir, fileName);
+        return pathFileName;
     }
     /**
      * 文件大小校验
@@ -151,6 +160,25 @@ public class FileUploadUtils {
     public static final String extractFilename(MultipartFile file) {
         String fileName = file.getOriginalFilename();
         String extension = getExtension(file);
-        fileName = DateUtils.datePath() + "/" + IdUtils
+        fileName = DateUtils.datePath() + "/" + IdUtils.fastUUID() + "." + extension;
+        return fileName;
+    }
+
+    private static final File getAbsoluteFile(String uploadDir, String fileName) throws IOException {
+        File desc = new File(uploadDir + File.separator + fileName);
+
+        if (!desc.exists()) {
+            if (!desc.getParentFile().exists()) {
+                desc.getParentFile().mkdirs();
+            }
+        }
+        return desc;
+    }
+
+    private static final String getPathFileName(String uploadDir, String fileName) throws IOException {
+        int dirLastIndex = RuoYiConfig.getProfile().length() + 1;
+        String currentDir = StringUtils.substring(uploadDir, dirLastIndex);
+        String pathFileName = Constants.RESOURCE_PREFIX + "/" + currentDir + "/" + fileName;
+        return pathFileName;
     }
 }

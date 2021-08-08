@@ -1,6 +1,6 @@
 package com.ruoyi.common.annotation;
 
-import com.ruoyi.common.enums.DateSourceType;
+import com.ruoyi.common.enums.DataSourceType;
 
 import java.lang.annotation.*;
 
@@ -16,5 +16,5 @@ public @interface DataSource {
     /**
      * 切换数据源的名称
      * */
-    DateSourceType value() default DateSourceType.MASTER;
+    DataSourceType value() default DataSourceType.MASTER;
 }
