@@ -10,8 +10,7 @@ import java.math.BigDecimal;
  * @Author Leejiyun
  * @Date 2021/8/7
  */
-
-@Retention(RetentionPolicy.CLASS.RUNTIME)
+@Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface Excel {
     /**
