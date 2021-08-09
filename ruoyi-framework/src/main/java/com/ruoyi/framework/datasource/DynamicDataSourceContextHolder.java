@@ -1,4 +1,4 @@
-package com.ruoyi.framework.config.datasource;
+package com.ruoyi.framework.datasource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

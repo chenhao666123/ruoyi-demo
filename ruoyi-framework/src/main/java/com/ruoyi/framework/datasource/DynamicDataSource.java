@@ -1,4 +1,4 @@
-package com.ruoyi.framework.config.datasource;
+package com.ruoyi.framework.datasource;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
