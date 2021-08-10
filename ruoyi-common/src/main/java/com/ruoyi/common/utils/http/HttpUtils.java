@@ -38,7 +38,7 @@ public class HttpUtils {
      * @param contentType 编码类型
      * @return 所代表远程资源的响应结果
      */
-    private static String sendGet(String url, String param, String contentType) {
+    public static String sendGet(String url, String param, String contentType) {
         StringBuilder result = new StringBuilder();
         BufferedReader in = null;
         try {
