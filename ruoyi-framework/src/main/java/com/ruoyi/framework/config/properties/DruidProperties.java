@@ -5,8 +5,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Author Leejiyun
- * @Date 2021/8/8
+ * druid 配置属性
+ *
+ * @author ruoyi
  */
 @Configuration
 public class DruidProperties {

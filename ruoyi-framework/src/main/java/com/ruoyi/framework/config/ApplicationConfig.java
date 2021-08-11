@@ -8,9 +8,13 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import java.util.TimeZone;
 
+
+
 /**
  * @Author Leejiyun
  * @Date 2021/8/8
+ *
+ * 程序注解配置
  */
 @Configuration
 // 表示通过aop框架暴露该代理对象,AopContext能够访问
@@ -26,4 +30,3 @@ public class ApplicationConfig {
         return jacksonObjectMapperBuilder -> jacksonObjectMapperBuilder.timeZone(TimeZone.getDefault());
     }
 }
-

@@ -6,9 +6,8 @@ import com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatPropertie
 import com.alibaba.druid.util.Utils;
 import com.ruoyi.common.enums.DataSourceType;
 import com.ruoyi.common.utils.spring.SpringUtils;
-import com.ruoyi.framework.datasource.DynamicDataSource;
 import com.ruoyi.framework.config.properties.DruidProperties;
-
+import com.ruoyi.framework.datasource.DynamicDataSource;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -23,13 +22,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Author Leejiyun
- * @Date 2021/8/8
+ * druid 配置多数据源
+ *
+ * @author ruoyi
  */
 @Configuration
 public class DruidConfig {
-
-
     @Bean
     @ConfigurationProperties("spring.datasource.druid.master")
     public DataSource masterDataSource(DruidProperties druidProperties) {
