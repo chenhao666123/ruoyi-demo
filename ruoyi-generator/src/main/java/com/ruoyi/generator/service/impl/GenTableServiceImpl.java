@@ -24,9 +24,11 @@ import org.apache.velocity.app.Velocity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import javax.annotation.Resource;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -40,13 +42,14 @@ import java.util.zip.ZipOutputStream;
  * @Author Leejiyun
  * @Date 2021/8/9
  */
+@Service
 public class GenTableServiceImpl implements IGenTableService {
     private static final Logger log = LoggerFactory.getLogger(GenTableServiceImpl.class);
 
-    @Autowired
+    @Resource
     private GenTableMapper genTableMapper;
 
-    @Autowired
+    @Resource
     private GenTableColumnMapper genTableColumnMapper;
 
 

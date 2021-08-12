@@ -5,5 +5,5 @@ package com.ruoyi.common.enums;
  * @Date 2021/8/7
  */
 public enum BusinessType {
-    OTHER, INSERT, UPDATE, DELETE, GRANT, EXPORT, GENCODE, CLEAN
+    OTHER, INSERT, UPDATE, IMPORT, DELETE, GRANT, EXPORT, GENCODE, CLEAN
 }

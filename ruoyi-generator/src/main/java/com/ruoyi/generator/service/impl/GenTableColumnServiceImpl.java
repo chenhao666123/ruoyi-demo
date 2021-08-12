@@ -1,6 +1,7 @@
 package com.ruoyi.generator.service.impl;
 
 import com.ruoyi.common.core.text.Convert;
+import com.ruoyi.generator.domain.GenTable;
 import com.ruoyi.generator.domain.GenTableColumn;
 import com.ruoyi.generator.mapper.GenTableColumnMapper;
 import com.ruoyi.generator.service.IGenTableColumnService;
@@ -16,8 +17,12 @@ import java.util.List;
  */
 @Service
 public class GenTableColumnServiceImpl implements IGenTableColumnService {
-    @Autowired
-    private GenTableColumnMapper genTableColumnMapper;
+
+    final GenTableColumnMapper genTableColumnMapper;
+
+    public GenTableColumnServiceImpl(GenTableColumnMapper genTableColumnMapper) {
+        this.genTableColumnMapper = genTableColumnMapper;
+    }
 
     /**
      * 查询业务字段列表

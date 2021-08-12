@@ -9,8 +9,8 @@ import java.util.Map;
  * @Author Leejiyun
  * @Date 2021/8/8
  */
-public interface IGenTableService {
 
+public interface IGenTableService {
     /**
      * 查询业务列表
      *
