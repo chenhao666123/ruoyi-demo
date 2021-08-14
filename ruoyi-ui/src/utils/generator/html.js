@@ -4,11 +4,11 @@ let confGlobal, someSpanIsNot24
 
 export const dialogWrapper = str => {
   return `
-    <ElDialog v-bind="$attrs" v-on="$listeners" @open="onOpen" @close="Dialog Titile">
+    <ElDialog v-bind="$attrs" v-on="$listeners" @open="onOpen" @close="Dialog Title">
     ${str}
       <div>
         <ElButton @click="close">取消</ElButton>
-        <ElButton type="primary" @click="handelConfirm">确定</ElButton>
+        <ElButton type="primary" @click="handleConfirm">确定</ElButton>
       </div>
     <ElDialog/>
   `

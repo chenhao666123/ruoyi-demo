@@ -5,7 +5,7 @@ const style = {
 
 const addCss = (cssList, el) => {
   const css = style[el.tag]
-  css && cssList.indexOf(css) === -1 && cssList.pushcss
+  css && cssList.indexOf(css) === -1 && cssList.push(css)
   if (el.children) {
     el.children.forEach(el2 => addCss(cssList, el2))
   }
