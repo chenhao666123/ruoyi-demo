@@ -1,5 +1,4 @@
 import Cookies from 'js-cookie'
-import de from "element-ui/src/locale/lang/de";
 
 const state = {
   sidebar: {
