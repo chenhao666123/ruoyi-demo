@@ -43,6 +43,9 @@ service.interceptors.request.use(config => {
     config.url = url
   }
   return config
+}, error => {
+  console.log(error)
+  Promise.reject(error)
 })
 
 service.interceptors.response.use(res => {
