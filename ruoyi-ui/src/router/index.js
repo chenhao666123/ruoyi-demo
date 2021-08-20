@@ -4,7 +4,6 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 
-
 export const constantRoutes = [
   {
     path: '/redirect',
