@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ruoyi.common.annotation.Excel;
 import com.ruoyi.common.annotation.Excel.ColumnType;
 import com.ruoyi.common.core.domain.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import java.util.Date;
 
@@ -12,7 +16,12 @@ import java.util.Date;
  *
  * @author ruoyi
  */
-public class SysLogininfor extends BaseEntity {
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
+@Data
+public class SysLoginInfo extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -37,7 +46,7 @@ public class SysLogininfor extends BaseEntity {
      * 登录IP地址
      */
     @Excel(name = "登录地址")
-    private String ipaddr;
+    private String ipAddress;
 
     /**
      * 登录地点
@@ -70,44 +79,49 @@ public class SysLogininfor extends BaseEntity {
     @Excel(name = "访问时间", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss")
     private Date loginTime;
 
-    public Long getInfoId() {
+   /* public Long getInfoId() {
         return infoId;
     }
 
-    public void setInfoId(Long infoId) {
+    public SysLoginInfo setInfoId(Long infoId) {
         this.infoId = infoId;
+        return this;
     }
 
     public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
+    public SysLoginInfo setUserName(String userName) {
         this.userName = userName;
+        return this;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public SysLoginInfo setStatus(String status) {
         this.status = status;
+        return this;
     }
 
     public String getIpaddr() {
         return ipaddr;
     }
 
-    public void setIpaddr(String ipaddr) {
+    public SysLoginInfo setIpaddr(String ipaddr) {
         this.ipaddr = ipaddr;
+        return this;
     }
 
     public String getLoginLocation() {
         return loginLocation;
     }
 
-    public void setLoginLocation(String loginLocation) {
+    public SysLoginInfo setLoginLocation(String loginLocation) {
         this.loginLocation = loginLocation;
+        return this;
     }
 
     public String getBrowser() {
@@ -140,5 +154,5 @@ public class SysLogininfor extends BaseEntity {
 
     public void setLoginTime(Date loginTime) {
         this.loginTime = loginTime;
-    }
+    }*/
 }
