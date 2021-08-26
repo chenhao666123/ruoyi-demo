@@ -1,4 +1,4 @@
-export const getters = {
+const getters = {
   sidebar: state => state.app.sidebar,
   size: state => state.app.size,
   device: state => state.app.device,
@@ -15,3 +15,5 @@ export const getters = {
   defaultRoutes:state => state.permission.defaultRoutes,
   sidebarRouters:state => state.permission.sidebarRouters,
 }
+
+export default getters

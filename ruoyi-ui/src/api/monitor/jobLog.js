@@ -16,11 +16,19 @@ export const delJobLog = () => {
   })
 }
 
-// 清空调度日志
+// 导出调度日志
 export const exportJobLog = (query) => {
   return request({
     url: '/monitor/jobLog/export',
     params: query
+  })
+}
+
+// 清空调度日志
+export function cleanJobLog() {
+  return request({
+    url: '/monitor/jobLog/clean',
+    params: 'delete'
   })
 }
 

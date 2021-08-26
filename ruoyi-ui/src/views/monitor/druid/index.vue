@@ -1,5 +1,5 @@
 <template>
-
+  <IFrame :src="url" />
 </template>
 
 <script>
