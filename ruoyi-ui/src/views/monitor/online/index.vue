@@ -7,8 +7,6 @@
           clearable
           size="small"
           placeholder="请输入登录地址"
-          v-model="queryParams.ipAddress" />
-      </ElFormItem>
       <ElFormItem label="用户名称" prop="userName">
         <ElInput
           @keyup.enter.native="handleQuery"
